@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-
+import { Container } from "react-bootstrap"
+import Navbar from "./Navbar"
 class App extends Component {
   constructor(props) {
     super(props);
@@ -33,15 +34,18 @@ class App extends Component {
 
   render() {
     return (
-      <ul>
-        {this.state.data.map(contact => {
-          return (
-            <li key={contact.id}>
-              {contact.name} - {contact.email}
-            </li>
-          );
-        })}
-      </ul>
+      <div>
+        <Navbar />
+        <ul>
+          {this.state.data.map(contact => {
+            return (
+              <li key={contact.id}>
+                {contact.name} - {contact.email}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     );
   }
 }
